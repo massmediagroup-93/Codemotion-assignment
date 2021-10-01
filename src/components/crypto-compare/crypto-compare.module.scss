@@ -1,0 +1,57 @@
+.cryptoCompare {
+  $threeColumns: '';
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_threeColumns {
+    $threeColumns: &;
+
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__table {
+    padding: 1rem;
+
+    table {
+      border-spacing: 0;
+      border: 1px solid black;
+
+      tr {
+        :last-child {
+          td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+      th,
+      td {
+        margin: 0;
+        padding: 0.5rem;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
+
+        :last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
+
+  &__item {
+    width: 90vw;
+    margin-top: 20px;
+
+    #{$threeColumns} & {
+      width: 30vw;
+    }
+  }
+}
